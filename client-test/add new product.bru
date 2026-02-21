@@ -1,0 +1,29 @@
+meta {
+  name: add new product
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:50000/products
+  body: json
+  auth: inherit
+}
+
+headers {
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTcwMDNmOTI3OTA4NTI4YjUzYTkzNDgiLCJ1c2VybmFtZSI6Ik51ZXZvIHVzdWFyaW8iLCJlbWFpbCI6Im1hcmlhbm9AZ21haWwuY29tIiwiaWF0IjoxNzY4OTU0MTk4LCJleHAiOjE3Njg5NTc3OTh9.vDmiBMKm-7sfvI8hkqe151N3n8Dn33eP--igjze6wIE
+}
+
+body:json {
+  {
+    "name": "Cemento 1kg",
+    "price": 1200,
+    "stock": 800,
+    "category": "Materiales"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
