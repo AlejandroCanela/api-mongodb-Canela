@@ -39,7 +39,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteProduct = exports.updateProduct = exports.createProduct = exports.findProducts = exports.getProducts = void 0;
+exports.deleteProduct = exports.updateProduct = exports.createProduct = exports.findProduct = exports.getProducts = void 0;
 var product_model_1 = require("../models/product.model");
 var mongoose_1 = __importDefault(require("mongoose"));
 var productValidator_1 = require("../validators/productValidator");
@@ -64,7 +64,7 @@ var getProducts = function (req, res) { return __awaiter(void 0, void 0, void 0,
     });
 }); };
 exports.getProducts = getProducts;
-var findProducts = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+var findProduct = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var validate, _a, name_1, price, stock, category, description, filters, products, error_2;
     return __generator(this, function (_b) {
         switch (_b.label) {
@@ -118,7 +118,7 @@ var findProducts = function (req, res) { return __awaiter(void 0, void 0, void 0
         }
     });
 }); };
-exports.findProducts = findProducts;
+exports.findProduct = findProduct;
 var createProduct = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var body, name_2, price, stock, category, description, validate, createdProduct, error_3, err;
     return __generator(this, function (_a) {

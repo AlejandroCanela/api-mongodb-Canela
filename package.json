@@ -1,7 +1,7 @@
 {
-  "name": "clase-11",
+  "name": "trabajo-final",
   "version": "4.0.0",
-  "description": "Repaso Mongodb",
+  "description": "api-mongodb",
   "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev --respawn ./src/index.ts",
@@ -9,7 +9,7 @@
     "build": "tsc"
   },
   "keywords": [],
-  "author": "gabrielalberini",
+  "author": "gabrielalberini-base/alejandrocanela-version",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^3.0.3",

@@ -7,6 +7,7 @@ var productRouter = (0, express_1.Router)();
 exports.productRouter = productRouter;
 // GET - http://localhost:50000/products/
 productRouter.get("/", product_controller_1.getProducts);
+productRouter.get("/", product_controller_1.findProduct);
 productRouter.post("/", product_controller_1.createProduct);
 productRouter.patch("/:id", product_controller_1.updateProduct);
 productRouter.delete("/:id", product_controller_1.deleteProduct);

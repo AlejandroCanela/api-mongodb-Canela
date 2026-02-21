@@ -61,7 +61,6 @@ var register = function (req, res) { return __awaiter(void 0, void 0, void 0, fu
                 if (!email || !password || !username) {
                     return [2 /*return*/, res.status(400).json({ success: false, error: "data invalida, revisa los datos compartidos" })];
                 }
-                // gabi3@gmail.com
                 if (!email.includes("@") || !email.endsWith(".com")) {
                     return [2 /*return*/, res.status(400).json({ success: false, error: "el correo electronico debería ser un email valido" })];
                 }
