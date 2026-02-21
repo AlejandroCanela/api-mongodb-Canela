@@ -12,13 +12,52 @@ const getProducts = async (req: Request, res: Response) => {
     res.status(500).json({ success: false, error: err.message })
   }
 }
-const findProducts=async(req: Request, res:Response)=>{
+const findProduct = async (req: Request, res: Response) => {
   try {
-    const products = await Product.find().sort({ _id: -1 })
-    res.json({ success: true, data: products })
-  } catch (error) {
-    const err = error as Error
-    res.status(500).json({ success: false, error: err.message })
+    const validate = productValidate.partial().safeParse(req.body)
+    if (!validate.success) {
+      return res.status(400).json({
+        success: false,
+        error: validate.error.flatten().fieldErrors
+      })
+    }
+    const { name, price, stock, category, description } = validate.data
+    const filters: any = {}
+    if (name) {
+      filters.name = { $regex: name, $options: "i" }
+    }
+    if (category) {
+      filters.category = category
+    }
+    if (description) {
+      filters.description = { $regex: description, $options: "i" }
+    }
+    if (price) {
+      filters.price = price
+    }
+    if (stock) {
+      filters.stock = stock
+    }
+    const products = await Product.find(filters)
+
+    return res.status(200).json({
+      success: true,
+      results: products.length,
+      data: products
+    })
+
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      return res.status(500).json({
+        success: false,
+        error: error.message
+      })
+    }
+
+    return res.status(500).json({
+      success: false,
+      error: "Error interno del servidor"
+    })
   }
 }
 
@@ -91,4 +130,4 @@ const deleteProduct = async (req: Request, res: Response) => {
   }
 }
 
-export { getProducts, findProducts, createProduct, updateProduct, deleteProduct }
+export { getProducts, findProduct, createProduct, updateProduct, deleteProduct }

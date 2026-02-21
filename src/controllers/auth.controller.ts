@@ -23,7 +23,6 @@ const register = async (req: Request, res: Response) => {
       return res.status(400).json({ success: false, error: "data invalida, revisa los datos compartidos" })
     }
 
-    // gabi3@gmail.com
     if (!email.includes("@") || !email.endsWith(".com")) {
       return res.status(400).json({ success: false, error: "el correo electronico debería ser un email valido" })
     }

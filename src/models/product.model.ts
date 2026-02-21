@@ -1,7 +1,5 @@
 import mongoose from "mongoose"
 
-// contrato 
-// como defina un producto es como lo voy a manipular
 const ProductSchema = new mongoose.Schema({
   name: { type: String, required: true },
   price: { type: Number, default: 0 },
