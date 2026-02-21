@@ -1,20 +1,12 @@
 meta {
   name: find product
   type: http
-  seq: 2
+  seq: 1
 }
 
 get {
-  url: http://localhost:50000/products
-  body: json
+  url: http://localhost:50000/products?name=televisor&price=5000
   auth: inherit
-}
-
-body:json {
-  {
-    "name": "televisor",
-    "price": 5000,
-  }
 }
 
 settings {

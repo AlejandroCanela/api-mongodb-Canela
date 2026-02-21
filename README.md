@@ -16,12 +16,8 @@ curl http://localhost:50000/products
 ```
 ## Obtener producto especifico
 ```sh
-curl -X POST http://localhost:50000/products -H "Content-Type: application/json" -d '{
-  "name": "televisor",
-  "price":5000
-}'
+curl "http://localhost:50000/products?name=televisor&price=5000"
 ```
-
 ## Agregar producto
 
 ```sh
