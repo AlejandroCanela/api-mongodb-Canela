@@ -67,7 +67,7 @@ var register = function (req, res) { return __awaiter(void 0, void 0, void 0, fu
                 if (password.length < 4) {
                     return [2 /*return*/, res.status(400).json({ success: false, error: "la contraseña debe contar al menos con 5 caracteres" })];
                 }
-                return [4 /*yield*/, user_model_1.User.find({ email: email })];
+                return [4 /*yield*/, user_model_1.User.findOne({ email: email })];
             case 1:
                 foundUser = _a.sent();
                 if (foundUser) {

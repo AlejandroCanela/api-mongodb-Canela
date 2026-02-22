@@ -31,7 +31,7 @@ const register = async (req: Request, res: Response) => {
       return res.status(400).json({ success: false, error: "la contraseña debe contar al menos con 5 caracteres" })
     }
 
-    const foundUser = await User.find({ email })
+    const foundUser = await User.findOne({ email })
 
     if (foundUser) {
       return res.status(400).json({ success: false, error: "Email ya existente en nuestra base de datos" })
